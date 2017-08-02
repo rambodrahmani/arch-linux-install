@@ -123,7 +123,7 @@ Generate l'fstab:
 ```shell
 root@archiso ~ # genfstab -pU /mnt >> /mnt/etc/fstab
 ```
-Aggiungete questa riga al file /mnt/etc/fstab:
+Aggiungete questa riga al file ```/mnt/etc/fstab:```
 ```shell
 tmpfs /tmp tmpfs defaults,noatime,mode=1777 0 0
 ```
