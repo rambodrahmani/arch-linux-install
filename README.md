@@ -73,7 +73,7 @@ Iniziamo ora a partizionare il disco:
 ```shell
 root@archiso ~ # parted -s /dev/sda mklabel msdos
 root@archiso ~ # parted -s /dev/sda mkpart primary 2048s 100%
-root@archiso ~ # cryptsetup luksFormat /dev/sda1
+root@archiso ~ # cryptsetup -c aes-xts-plain64 -y --use-random --key-size 512 luksFormat /dev/sda1
 root@archiso ~ # cryptsetup luksOpen /dev/sda1 lvm
 root@archiso ~ # pvcreate /dev/mapper/lvm
 root@archiso ~ # vgcreate vg /dev/mapper/lvm
@@ -83,8 +83,27 @@ root@archiso ~ # lvcreate -l +100%FREE vg -n home
 root@archiso ~ # mkswap -L swap /dev/mapper/vg-swap
 root@archiso ~ # mkfs.ext4 /dev/mapper/vg-boot
 root@archiso ~ # mkfs.ext4 /dev/mapper/vg-home
-root@archiso ~ # mount /dev/mapper/vg-root /mnt
+root@archiso ~ # mount /dev/mapper/vg-boot /mnt
 root@archiso ~ # mkdir /mnt/home
 root@archiso ~ # mount /dev/mapper/vg-home /mnt/home
 ```
 Un partizionamento di questo tipo mantiene separate le partizioni boot e home
+
+***
+
+A questo punto possiamo installare il sistema. Ho aggiunto anche alcuni pacchetti che tornano sicuramente utili al primo avvio del sistema:
+
+```shell
+root@archiso ~ # pacstrap -i /mnt base base-devel grub-efi-x86_64 zsh vim git efibootmgr dialog wpa_supplicant
+```
+Generate l'fstab:
+
+```shell
+root@archiso ~ # genfstab -pU /mnt >> /mnt/etc/fstab
+```
+Aggiungete questa riga al file /mnt/etc/fstab:
+```shell
+tmpfs /tmp tmpfs defaults,noatime,mode=1777 0 0
+```
+
+***
