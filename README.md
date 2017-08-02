@@ -86,8 +86,6 @@ Iniziamo ora a partizionare il disco:
 
 ```shell
 root@archiso ~ # parted -s /dev/sda mklabel msdos
-```
-```shell
 root@archiso ~ # parted -s /dev/sda mkpart primary 2048s 100%
 ```
 ```shell
