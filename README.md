@@ -103,9 +103,9 @@ root@archiso ~ # lvcreate -l +100%FREE vg -n home
 root@archiso ~ # mkswap -L swap /dev/mapper/vg-swap
 root@archiso ~ # mkfs.ext4 /dev/mapper/vg-boot
 root@archiso ~ # mkfs.ext4 /dev/mapper/vg-home
-root@archiso ~ # mount /dev/mapper/vg-boot /mnt
 ```
 ```shell
+root@archiso ~ # mount /dev/mapper/vg-boot /mnt
 root@archiso ~ # mkdir /mnt/home
 root@archiso ~ # mount /dev/mapper/vg-home /mnt/home
 ```
