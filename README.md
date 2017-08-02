@@ -226,6 +226,9 @@ Ora possiamo configurare GRUB: dato che abbiamo criptato il disco interamente do
 Modifichiamo con nano
 ```shell
 [root@archiso /]# nano /etc/default/grub
+<img src="images/1.png" height="200px" />
+<img src="images/2.png" height="200px" />
+<img src="images/3.png" height="200px" />
 ```
 
 aggiungiamo il parametro ```cryptdevice``` per il kernel:
@@ -247,11 +250,21 @@ Dopo di che possiamo eseguire:
 ```
 ***
 
-Siamo giunti alla conclusione del processo di installazione. Potete semplicemente riavviare con il comando:
+Siamo giunti alla conclusione del processo di installazione. Potete semplicemente riavviare con i comandi:
 
 ```shell
-[root@archiso /]# reboot
+[root@archiso /]# exit
+root@archiso ~ # reboot
 ```
+
+***
+Dopo il riavvio, se l'installazione ha avuto esito positivo, vi ritroverete con le seguenti schermate per 
+il boot: dovrete innanzitutto fornire la password a GRUB, dopo di che apparira' il menu di GRUB e, una 
+volta scelto di avviare Arch Linux, dovrete inserire la password per decriptare il disco nuovamente.
+
+<img src="images/4.png" height="200px" />
+<img src="images/5.png" height="200px" />
+<img src="images/6.png" height="200px" />
 
 # Installazione KDE Plasma
 Dato che come ambiente di lavoro utilizzo KDE Plasma, di seguito le istruzioni necessarie per installarlo.
