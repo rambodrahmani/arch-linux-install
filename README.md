@@ -15,7 +15,7 @@ dd if=archlinux.img of=/dev/sdX bs=16M && sync # su linux
 
 Eseguite il Boot dalla pennina USB appena creata.
 
-<img src="images/1.png" />
+<img src="images/1.png" height="200px" />
 
 Nelle istruzioni che seguono si assume che il boot sia stato eseguito correttamente e che vi troviate nella shell fornita dal setup di Arch Linux.
 
