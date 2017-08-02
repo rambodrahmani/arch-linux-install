@@ -229,3 +229,6 @@ Siamo giunti alla conclusione del processo di installazione. Potete semplicement
 [root@archiso /]# reboot
 ```
 
+--
+
+Rambod Rahmani <rambodrahmani@autistici.org>
