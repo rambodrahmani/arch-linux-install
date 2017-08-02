@@ -169,12 +169,12 @@ Dopo di che:
 
 Impostate la variabile LANG in locale.conf ```/etc/locale.conf```:
 ```shell
-LANG=en_US.UTF-8
+[root@archiso /]# echo LANG=en_US.UTF-8 >> /etc/locale.conf
 ```
 
 Hostname ```/etc/hostname```:
 ```shell
-myhostname
+[root@archiso /]# echo myhostname >> /etc/hostname
 ```
 
 Aggiungete la corrispondente entry nel file ```/etc/hosts```:
