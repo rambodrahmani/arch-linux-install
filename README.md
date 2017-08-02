@@ -111,7 +111,7 @@ root@archiso ~ # mount /dev/mapper/vg-boot /mnt
 root@archiso ~ # mkdir /mnt/home
 root@archiso ~ # mount /dev/mapper/vg-home /mnt/home
 ```
-Un partizionamento di questo tipo mantiene separate le partizioni boot e home
+Un partizionamento di questo tipo mantiene separate le partizioni boot e home.
 
 ***
 
