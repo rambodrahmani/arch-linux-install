@@ -233,6 +233,7 @@ Siamo giunti alla conclusione del processo di installazione. Potete semplicement
 Dato che come ambiente di lavoro utilizzo KDE Plasma, di seguito le istruzioni necessarie per installarlo.
 
 Per i comandi che seguono si presume che l'installazione di Arch Linux sia stata eseguita correttamente, che avete eseguito il boot del nuovo sistema installato e che siati loggati con l'utente `root`.
+
 --
 
 Rambod Rahmani <<rambodrahmani@autistici.org>>
