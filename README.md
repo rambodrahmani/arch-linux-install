@@ -30,6 +30,20 @@ root@archiso ~ # wifi-menu
 ```
 oppure usate un cavo ethernet.
 
+Assicuratevi che la vostra connessione ad internet sia funzionante:
+```shell
+root@archiso ~ # ping google.com
+PING google.com (216.58.198.46) 56(84) bytes of data.
+64 bytes from mil04s04-in-f46.1e100.net (216.58.198.46): icmp_seq=1 ttl=51 time=19.4 ms
+64 bytes from mil04s04-in-f46.1e100.net (216.58.198.46): icmp_seq=2 ttl=51 time=18.5 ms
+64 bytes from mil04s04-in-f46.1e100.net (216.58.198.46): icmp_seq=3 ttl=51 time=19.7 ms
+64 bytes from mil04s04-in-f46.1e100.net (216.58.198.46): icmp_seq=4 ttl=51 time=18.6 ms
+^C
+--- google.com ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3004ms
+rtt min/avg/max/mdev = 18.538/19.119/19.783/0.541 ms
+```
+
 ***
 
 Identificate il disco sul quale volete installare Arch Linux utilizzando il comando:
