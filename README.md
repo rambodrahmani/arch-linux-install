@@ -86,19 +86,47 @@ Iniziamo ora a partizionare il disco:
 
 ```shell
 root@archiso ~ # parted -s /dev/sda mklabel msdos
+```
+```shell
 root@archiso ~ # parted -s /dev/sda mkpart primary 2048s 100%
+```
+```shell
 root@archiso ~ # cryptsetup -c aes-xts-plain64 -y --use-random --key-size 512 luksFormat /dev/sda1
+```
+```shell
 root@archiso ~ # cryptsetup luksOpen /dev/sda1 lvm
+```
+```shell
 root@archiso ~ # pvcreate /dev/mapper/lvm
+```
+```shell
 root@archiso ~ # vgcreate vg /dev/mapper/lvm
+```
+```shell
 root@archiso ~ # lvcreate -L 4G vg -n swap
+```
+```shell
 root@archiso ~ # lvcreate -L 15G vg -n boot
+```
+```shell
 root@archiso ~ # lvcreate -l +100%FREE vg -n home
+```
+```shell
 root@archiso ~ # mkswap -L swap /dev/mapper/vg-swap
+```
+```shell
 root@archiso ~ # mkfs.ext4 /dev/mapper/vg-boot
+```
+```shell
 root@archiso ~ # mkfs.ext4 /dev/mapper/vg-home
+```
+```shell
 root@archiso ~ # mount /dev/mapper/vg-boot /mnt
+```
+```shell
 root@archiso ~ # mkdir /mnt/home
+```
+```shell
 root@archiso ~ # mount /dev/mapper/vg-home /mnt/home
 ```
 Un partizionamento di questo tipo mantiene separate le partizioni boot e home
