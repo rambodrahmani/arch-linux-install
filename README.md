@@ -163,7 +163,45 @@ Aggiungete la corrispondente entry nel file ```/etc/hosts```:
 127.0.1.1	myhostname.localdomain	myhostname
 ```
 
-Impostate la password per l'utente root
+Impostate la password per l'utente root:
+```shell
+[root@archiso /]# passwd
+```
+
+Aggiungete un nuovo utente di sistema:
+```shell
+[root@archiso /]# useradd -m -g users -G wheel,games,power,optical,storage,scanner,lp,audio,video -s /bin/bash username
+```
+
+Impostate la password per l'utente appena creato:
+```shell
+[root@archiso /]# passwd username
+```
+
+Installate alcuni pacchetti che ci serviranno per terminare l'installazione:
+```shell
+[root@archiso /]# pacman -S sudo grub-bios os-prober
+```
+
+***
+
+Possiamo ora configurare mkinitcpio:
 
 ```shell
+[root@archiso /]# nano /etc/mkinitcpio.conf
+```
 
+Aggiungete ```ext4``` a ```MODULES``` e ```encrypt``` e ```lvm2``` a ```HOOKS``` prima di ```filesystems```.
+
+Rigenerate l'immagine initrd:
+```shell
+[root@archiso /]# mkinitcpio -p linux
+```
+
+***
+
+Ora possiamo configurare GRUB:
+
+
+
+***
