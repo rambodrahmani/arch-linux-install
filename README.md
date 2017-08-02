@@ -273,6 +273,85 @@ Dato che come ambiente di lavoro utilizzo KDE Plasma, di seguito le istruzioni n
 
 Per i comandi che seguono si presume che l'installazione di Arch Linux sia stata eseguita correttamente, che avete eseguito il boot del nuovo sistema installato e che siati loggati con l'utente `root`.
 
+Al primo boot dopo l'installazione il servizio dhcpcd non viene avviato automaticamente. Quindi 
+connettetevi ad internet utilizzando una connessione Wi-Fi con il comando:
+```shell
+[root@myhostname ~]# wifi-menu
+```
+
+oppure ottenete il nome della vostra connessione ethernet con il comando
+```shell
+[root@myhostname ~]# ip addr
+```
+ed avviate il servizio dhcpcd:
+```shel
+[root@myhostname ~]# dhcpcd eth0
+```
+dove si suppone che l'interfaccia ethernet si chiami eth0.
+
+Assicuratevi che la vostra connessione ad internet sia funzionante:
+```shell
+[root@myhostname ~]# ping google.com
+PING google.com (216.58.198.46) 56(84) bytes of data.
+64 bytes from mil04s04-in-f46.1e100.net (216.58.198.46): icmp_seq=1 ttl=51 time=19.4 ms
+64 bytes from mil04s04-in-f46.1e100.net (216.58.198.46): icmp_seq=2 ttl=51 time=18.5 ms
+64 bytes from mil04s04-in-f46.1e100.net (216.58.198.46): icmp_seq=3 ttl=51 time=19.7 ms
+64 bytes from mil04s04-in-f46.1e100.net (216.58.198.46): icmp_seq=4 ttl=51 time=18.6 ms
+^C
+--- google.com ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3004ms
+rtt min/avg/max/mdev = 18.538/19.119/19.783/0.541 ms
+```
+
+***
+
+Prima di procedere con l'installazione apportiamo alcune modifiche al file di configurazione del gestore di 
+pacman di Arch ```/etc/pacman.conf```:
+```shell
+[root@myhostname ~]# nano /etc/pacman.conf
+```
+rimuovere i commenti per
+```shell
+[multilib]
+include = /etc/pacman.d/mirrorlist
+```
+e aggiungere il seguente contenuto in fondo al file di configurazione:
+```shell
+[archlinuxfr]
+SigLevel = Never
+Server = http://repo.archlinux.fr/$arch
+```
+
+Aggiorniamo le repo:
+```shell
+[root@myhostname ~]# pacman -Syyu
+```
+
+Iniziamo installando i pacchetti di cui abbiamo bisogno:
+
+```shell
+[root@myhostname ~]# pacman -Syu xorg-server xorg-apps yaourt plasma-nm
+```
+potete anche installare i pacchetti separatamente se preferite. Questo processo di installazione risulta 
+parecchio lungo a seconda della connessione internet che state utilizzando e della macchina su cui vi 
+trovate a lavorare.
+
+Successivamente abilitate sddm
+```shell
+[root@myhostname ~]# sudo systemctl enable sddm
+```
+e il networkmanager
+```shell
+[root@myhostname ~]# sudo systemctl enable NetworkManager
+```
+
+A questo punto potete riavviare il sistema:
+```shell
+[root@myhostname ~]# reboot
+```
+
+***
+
 # Riferimenti
 Per maggiori informazioni e per capire quello che state facendo, potete consultare i seguenti riferimenti 
 che ho utilizzato per mettere assieme i comandi necessari.
@@ -301,6 +380,11 @@ Install](https://www.google.it/amp/s/www.pckr.co.uk/arch-grub-mkconfig-lvmetad-f
 [How to install Kde Plasma 5 on Arch 
 Linux](http://fasterland.net/how-to-install-kde-plasma-5-on-arch-linux.html)
 
+[How To Install Yaourt In Arch Linux](https://www.ostechnix.com/install-yaourt-arch-linux/)
+
+[Arch User Repository (Italiano)](https://wiki.archlinux.org/index.php/Arch_User_Repository_(Italiano))
+
+[SDDM](https://wiki.archlinux.org/index.php/SDDM)
 --
 
 Rambod Rahmani <<rambodrahmani@autistici.org>>
