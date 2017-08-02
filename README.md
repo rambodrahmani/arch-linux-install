@@ -335,11 +335,15 @@ Iniziamo installando i pacchetti di cui abbiamo bisogno:
 
 ```shell
 [root@myhostname ~]# pacman -Syu xorg-server xorg-apps yaourt plasma kde-application sddm sddm-kcm 
-firefox kde-applications breeze-gtk breeze-kde4 kde-gtk-config plasma-nm
+firefox kde-applications breeze-gtk breeze-kde4 kde-gtk-config plasma-nm xorg-xinit linux-headers 
+virtualbox-guest-utils virtualbox-guest-modules-arch
 ```
 potete anche installare i pacchetti separatamente se preferite. Questo processo di installazione risulta 
 parecchio lungo a seconda della connessione internet che state utilizzando e della macchina su cui vi 
 trovate a lavorare.
+
+###### N.B: i pacchetti ```virtualbox-guest-utils virtualbox-guest-modules-arch``` sono stati 
+installati per permettere a xorg di funzionare correttamente con VirtualBox.
 
 Successivamente abilitate sddm
 ```shell
