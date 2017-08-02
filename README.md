@@ -394,6 +394,7 @@ Linux](http://fasterland.net/how-to-install-kde-plasma-5-on-arch-linux.html)
 [Arch User Repository (Italiano)](https://wiki.archlinux.org/index.php/Arch_User_Repository_(Italiano))
 
 [SDDM](https://wiki.archlinux.org/index.php/SDDM)
+
 --
 
 Rambod Rahmani <<rambodrahmani@autistici.org>>
