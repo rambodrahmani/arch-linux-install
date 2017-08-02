@@ -4,9 +4,7 @@ La seguente repo contiene istruzioni minimali per installare Arch Linux con Full
 
 Per istruzioni dettagliate fare riferimento alla guida ufficiale: [Installation guide (Italiano)](https://wiki.archlinux.org/index.php/Installation_guide_(Italiano))
 
-#### N.B.: Nella cartella ```images``` sono presenti gli screenshot relativi ad una installazione di prova 
-su 
-macchina virtuale.
+#### N.B.: Nella cartella ```images``` sono presenti gli screenshot relativi ad una installazione di prova su macchina virtuale.
 
 ***
 Scaricate una immagine iso da: https://www.archlinux.org/
