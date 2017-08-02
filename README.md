@@ -108,7 +108,13 @@ tmpfs /tmp tmpfs defaults,noatime,mode=1777 0 0
 
 ***
 
-A questo punto, per evitare che ci siamo provlemi con lvm nei passaggi successivi, eseguite questi comandi:
+A questo punto, ho notato che queando si tenta di installare grub nei passaggi successi si incorre nell'errore
+
+```shell
+Failed to connect to lvmetad: No such file or directory.  Falling back to internal scanning. 
+```
+
+per evitare che ci siamo provlemi con lvm nei passaggi successivi, eseguite questi comandi:
 
 ```shell
 root@archiso ~ # mkdir /mnt/hostrun
@@ -118,3 +124,40 @@ root@archiso ~ # mount --bind /hostrun/lvm /run/lvm
 ```
 
 Notate che con ```root@archiso ~ # arch-chroot /mnt /bin/bash``` siamo anche entrati nella shell del nuovo sistema.
+
+***
+
+Passiamo ora alla configurazione di alcuni parametri minori del sistema:
+
+Timezone:
+```shell
+root@archiso ~ # ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
+root@archiso ~ # hwclock --systohc
+```
+
+Impostazioni di localizzazione:
+
+Nel file ```/etc/locale.gen``` rimuovete il commento a ```en_US.UTF-8 UTF-8``` o altre localizzazioni di cui potreste aver bisogno.
+
+Dopo di che:
+```shell
+root@archiso ~ # locale-gen
+root@archiso ~ # ln -sf /usr/share/zoneinfo/Europe/Stockholm /etc/localtime
+```
+
+Impostate la variabile LANG in locale.conf ```/etc/locale.conf```:
+```shell
+LANG=en_US.UTF-8
+```
+
+Hostname ```/etc/hostname```:
+```shell
+myhostname
+```
+
+Aggiungete la corrispondente entry nel file ```/etc/hosts```:
+```shell
+127.0.0.1	localhost.localdomain	localhost
+::1		localhost.localdomain	localhost
+127.0.1.1	myhostname.localdomain	myhostname
+```
