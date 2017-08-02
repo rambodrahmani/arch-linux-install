@@ -165,7 +165,6 @@ Nel file ```/etc/locale.gen``` rimuovete il commento a ```en_US.UTF-8 UTF-8``` o
 Dopo di che:
 ```shell
 [root@archiso /]# locale-gen
-[root@archiso /]# ln -sf /usr/share/zoneinfo/Europe/Stockholm /etc/localtime
 ```
 
 Impostate la variabile LANG in locale.conf ```/etc/locale.conf```:
