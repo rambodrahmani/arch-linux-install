@@ -10,10 +10,14 @@ Scaricate una immagine iso da: https://www.archlinux.org/
 Create una pennina bootable utilizzando la ISO che avete scaricato:
 
 ```shell
-dd if=archlinux.img of=/dev/sdX bs=16M && sync # on linux
+dd if=archlinux.img of=/dev/sdX bs=16M && sync # su linux
 ```
 
-Eseguite il Boot dalla pennina USB appena creata. Nelle istruzioni che seguono si assume che il boot sia stato eseguito correttamente e che vi troviate nella shell fornita dal setup di Arch Linux.
+Eseguite il Boot dalla pennina USB appena creata.
+
+<img src="images/1.png" />
+
+Nelle istruzioni che seguono si assume che il boot sia stato eseguito correttamente e che vi troviate nella shell fornita dal setup di Arch Linux.
 
 ***
 
