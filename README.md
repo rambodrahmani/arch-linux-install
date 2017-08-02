@@ -116,7 +116,7 @@ Un partizionamento di questo tipo mantiene separate le partizioni boot e home
 A questo punto possiamo installare il sistema. Ho aggiunto anche alcuni pacchetti che tornano sicuramente utili al primo avvio del sistema:
 
 ```shell
-root@archiso ~ # pacstrap -i /mnt base base-devel grub-efi-x86_64 zsh vim git efibootmgr dialog wpa_supplicant
+root@archiso ~ # pacstrap -i /mnt base base-devel zsh vim git efibootmgr dialog wpa_supplicant
 ```
 Generate l'fstab:
 
