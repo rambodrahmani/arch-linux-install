@@ -231,4 +231,4 @@ Siamo giunti alla conclusione del processo di installazione. Potete semplicement
 
 --
 
-Rambod Rahmani <rambodrahmani@autistici.org>
+Rambod Rahmani <<rambodrahmani@autistici.org>>
