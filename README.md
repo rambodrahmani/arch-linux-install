@@ -343,11 +343,11 @@ trovate a lavorare.
 
 Successivamente abilitate sddm
 ```shell
-[root@myhostname ~]# sudo systemctl enable sddm
+[root@myhostname ~]# systemctl enable sddm
 ```
 e il networkmanager
 ```shell
-[root@myhostname ~]# sudo systemctl enable NetworkManager
+[root@myhostname ~]# systemctl enable NetworkManager
 ```
 
 A questo punto potete riavviare il sistema:
