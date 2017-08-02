@@ -120,7 +120,8 @@ per evitare che ci siamo provlemi con lvm nei passaggi successivi, eseguite ques
 root@archiso ~ # mkdir /mnt/hostrun
 root@archiso ~ # mount --bind /run /mnt/hostrun
 root@archiso ~ # arch-chroot /mnt /bin/bash
-root@archiso ~ # mount --bind /hostrun/lvm /run/lvm
+[root@archiso /]# mkdir /run/lvm
+[root@archiso /]# mount --bind /hostrun/lvm /run/lvm
 ```
 
 Notate che con ```root@archiso ~ # arch-chroot /mnt /bin/bash``` siamo anche entrati nella shell del nuovo sistema.
@@ -131,8 +132,8 @@ Passiamo ora alla configurazione di alcuni parametri minori del sistema:
 
 Timezone:
 ```shell
-root@archiso ~ # ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
-root@archiso ~ # hwclock --systohc
+[root@archiso /]# ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
+[root@archiso /]# hwclock --systohc
 ```
 
 Impostazioni di localizzazione:
@@ -141,8 +142,8 @@ Nel file ```/etc/locale.gen``` rimuovete il commento a ```en_US.UTF-8 UTF-8``` o
 
 Dopo di che:
 ```shell
-root@archiso ~ # locale-gen
-root@archiso ~ # ln -sf /usr/share/zoneinfo/Europe/Stockholm /etc/localtime
+[root@archiso /]# locale-gen
+[root@archiso /]# ln -sf /usr/share/zoneinfo/Europe/Stockholm /etc/localtime
 ```
 
 Impostate la variabile LANG in locale.conf ```/etc/locale.conf```:
@@ -161,3 +162,8 @@ Aggiungete la corrispondente entry nel file ```/etc/hosts```:
 ::1		localhost.localdomain	localhost
 127.0.1.1	myhostname.localdomain	myhostname
 ```
+
+Impostate la password per l'utente root
+
+```shell
+
