@@ -227,14 +227,17 @@ Modifichiamo con nano
 ```shell
 [root@archiso /]# nano /etc/default/grub
 ```
+
+aggiungiamo il parametro ```cryptdevice``` per il kernel:
+```shell
+GRUB_CMDLINE_LINUX="cryptdevice=/dev/sda1:lvm"
+```
+
 e aggiungiamo la riga
 ```shell
 GRUB_ENABLE_CRYPTODISK=y
 ```
-inoltre aggiungiamo il parametro ```cryptodevice``` per il kernel:
-```shell
-GRUB_CMDLINE_LINUX="cryptdevice=/dev/sda1:lvm"
-```
+in fondo al file di configurazione.
 
 Dopo di che possiamo eseguire:
 
