@@ -200,8 +200,32 @@ Rigenerate l'immagine initrd:
 
 ***
 
-Ora possiamo configurare GRUB:
+Ora possiamo configurare GRUB: dato che abbiamo criptato il disco interamente dobbiamo fornire alcune indicazioni nel file di configurazione di GRUB ```/etc/default/grub```.
 
+Modifichiamo con nano
+```shell
+[root@archiso /]# nano /etc/default/grub
+```
+e aggiungiamo la riga
+```shell
+GRUB_ENABLE_CRYPTODISK=y
+```
+inoltre aggiungiamo il parametro ```cryptodevice``` per il kernel:
+```shell
+GRUB_CMDLINE_LINUX="cryptdevice=/dev/sda1:lvm"
+```
 
+Dopo di che possiamo eseguire:
 
+```shell
+[root@archiso /]# grub-mkconfig -o /boot/grub/grub.cfg
+[root@archiso /]# grub-install /dev/sda
+```
 ***
+
+Siamo giunti alla conclusione del processo di installazione. Potete semplicemente riavviare con il comando:
+
+```shell
+[root@archiso /]# reboot
+```
+
