@@ -107,3 +107,14 @@ tmpfs /tmp tmpfs defaults,noatime,mode=1777 0 0
 ```
 
 ***
+
+A questo punto, per evitare che ci siamo provlemi con lvm nei passaggi successivi, eseguite questi comandi:
+
+```shell
+root@archiso ~ # mkdir /mnt/hostrun
+root@archiso ~ # mount --bind /run /mnt/hostrun
+root@archiso ~ # arch-chroot /mnt /bin/bash
+root@archiso ~ # mount --bind /hostrun/lvm /run/lvm
+```
+
+Notate che con ```root@archiso ~ # arch-chroot /mnt /bin/bash``` siamo anche entrati nella shell del nuovo sistema.
