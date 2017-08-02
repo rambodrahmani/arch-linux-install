@@ -271,6 +271,26 @@ Dato che come ambiente di lavoro utilizzo KDE Plasma, di seguito le istruzioni n
 
 Per i comandi che seguono si presume che l'installazione di Arch Linux sia stata eseguita correttamente, che avete eseguito il boot del nuovo sistema installato e che siati loggati con l'utente `root`.
 
+# Riferimenti
+Per maggiori informazioni e per capire quello che state facendo, potete consultare i seguenti riferimenti 
+che ho utilizzato per mettere assieme i comandi necessari.
+
+[How To Securely Destroy/Wipe Data On Hard Drives With 
+shred](https://www.howtoforge.com/how-to-securely-destroy-wipe-data-on-hard-drives-with-shred)
+[Full disk encryption with LUKS (including /boot) · Pavel 
+Kogan](http://www.pavelkogan.com/2014/05/23/luks-full-disk-encryption/)
+[KDE (Italiano) - ArchWiki](https://wiki.archlinux.org/index.php/KDE_(Italiano))
+[Minimal instructions for installing arch linux on an UEFI system with full system encryption using 
+dm-crypt and luks · GitHub](https://gist.github.com/mattiaslundberg/8620837)
+[How to install Arch Linux with Full Disk 
+Encryption](https://www.howtoforge.com/tutorial/how-to-install-arch-linux-with-full-disk-encryption/)
+[Arch Grub-mkconfig Lvmetad Failures Inside Chroot 
+Install](https://www.google.it/amp/s/www.pckr.co.uk/arch-grub-mkconfig-lvmetad-failures-inside-chroot-install/amp/)
+[Xorg (Italiano)](https://wiki.archlinux.org/index.php/Xorg_(Italiano))
+[KDE](https://wiki.archlinux.org/index.php/KDE)
+[How to install Kde Plasma 5 on Arch 
+Linux](http://fasterland.net/how-to-install-kde-plasma-5-on-arch-linux.html)
+
 --
 
 Rambod Rahmani <<rambodrahmani@autistici.org>>
