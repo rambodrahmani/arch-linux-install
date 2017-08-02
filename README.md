@@ -154,7 +154,7 @@ Passiamo ora alla configurazione di alcuni parametri minori del sistema:
 
 Timezone:
 ```shell
-[root@archiso /]# ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
+[root@archiso /]# ln -sf /usr/share/zoneinfo/Europe/Rome /etc/localtime
 [root@archiso /]# hwclock --systohc
 ```
 
