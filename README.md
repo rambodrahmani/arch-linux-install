@@ -268,10 +268,14 @@ volta scelto di avviare Arch Linux, dovrete inserire la password per decriptare 
 <img src="images/5.png" height="200px" />
 <img src="images/6.png" height="200px" />
 
+***
+
 # Installazione KDE Plasma
 Dato che come ambiente di lavoro utilizzo KDE Plasma, di seguito le istruzioni necessarie per installarlo.
 
 Per i comandi che seguono si presume che l'installazione di Arch Linux sia stata eseguita correttamente, che avete eseguito il boot del nuovo sistema installato e che siati loggati con l'utente `root`.
+
+Eseguite il login con le credenziali di root,
 
 Al primo boot dopo l'installazione il servizio dhcpcd non viene avviato automaticamente. Quindi 
 connettetevi ad internet utilizzando una connessione Wi-Fi con il comando:
@@ -330,7 +334,8 @@ Aggiorniamo le repo:
 Iniziamo installando i pacchetti di cui abbiamo bisogno:
 
 ```shell
-[root@myhostname ~]# pacman -Syu xorg-server xorg-apps yaourt plasma-nm
+[root@myhostname ~]# pacman -Syu xorg-server xorg-apps yaourt plasma kde-application sddm sddm-kcm 
+firefox kde-applications breeze-gtk breeze-kde4 kde-gtk-config plasma-nm
 ```
 potete anche installare i pacchetti separatamente se preferite. Questo processo di installazione risulta 
 parecchio lungo a seconda della connessione internet che state utilizzando e della macchina su cui vi 
@@ -349,6 +354,10 @@ A questo punto potete riavviare il sistema:
 ```shell
 [root@myhostname ~]# reboot
 ```
+
+***
+
+Al successivo riavvio dovrebbe avviarsi la schermata di login fornita da sddm, dove potete eseguire l'accesso con l'utente creato durante il processo di installazione.
 
 ***
 
