@@ -23,8 +23,29 @@ Nelle istruzioni che seguono si assume che il boot sia stato eseguito correttame
 
 ***
 
-Identificate il disco sul quale volete installare Arch Linux utilizzando il comando lsblk:
+Identificate il disco sul quale volete installare Arch Linux utilizzando il comando:
 
 ```shell
-lsblk
+root@archiso ~ # lsblk
 ```
+In questa guida utilizzeremo il disco
+
+```shell
+NAME          MAJ:MIN RM   SIZE RO TYPE  MOUNTPOINT
+sda             8:0    0 232.9G  0 disk
+```
+
+La struttura finale che vogliamo ottenere:
+
+```shell
+NAME          MAJ:MIN RM   SIZE RO TYPE  MOUNTPOINT
+sda             8:0    0 232.9G  0 disk  
+└─sda1          8:1    0 232.9G  0 part  
+  └─lvm       254:0    0 232.9G  0 crypt 
+    ├─vg-swap 254:1    0     4G  0 lvm   
+    ├─vg-root 254:2    0    20G  0 lvm   /
+    └─vg-home 254:3    0 208.9G  0 lvm   /home
+```
+
+***
+
