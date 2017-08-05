@@ -228,9 +228,6 @@ Ora possiamo configurare GRUB: dato che abbiamo criptato il disco interamente do
 Modifichiamo con nano
 ```shell
 [root@archiso /]# nano /etc/default/grub
-<img src="images/1.png" height="200px" />
-<img src="images/2.png" height="200px" />
-<img src="images/3.png" height="200px" />
 ```
 
 aggiungiamo il parametro ```cryptdevice``` per il kernel:
@@ -334,9 +331,9 @@ Aggiorniamo le repo:
 Iniziamo installando i pacchetti di cui abbiamo bisogno:
 
 ```shell
-[root@myhostname ~]# pacman -Syu xorg-server xorg-apps yaourt plasma kde-application sddm sddm-kcm 
-firefox kde-applications breeze-gtk breeze-kde4 kde-gtk-config plasma-nm xorg-xinit linux-headers 
-virtualbox-guest-utils virtualbox-guest-modules-arch
+[root@myhostname ~]# pacman -Syu xorg-server xorg-apps yaourt plasma sddm sddm-kcm 
+[root@myhostname ~]# pacman -Syu firefox kde-applications breeze-gtk breeze-kde4 kde-gtk-config plasma-nm xorg-xinit linux-headers 
+[root@myhostname ~]# pacman -Syu virtualbox-guest-utils virtualbox-guest-modules-arch
 ```
 potete anche installare i pacchetti separatamente se preferite. Questo processo di installazione risulta 
 parecchio lungo a seconda della connessione internet che state utilizzando e della macchina su cui vi 
