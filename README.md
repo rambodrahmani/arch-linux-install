@@ -115,6 +115,16 @@ Un partizionamento di questo tipo mantiene separate le partizioni boot e home.
 
 ***
 
+Eseguiamo il back up del file /etc/pacman.d/mirrorlist:
+
+```shell
+cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
+```
+Dopo di che, eseguiamo il ranking dei mirrors utilizzando il parametro -n 6 per mostrare solamente i 6 mirror piu veloci:
+
+```shell
+rankmirrors -n 6 /etc/pacman.d/mirrorlist.backup > /etc/pacman.d/mirrorlist
+```
 A questo punto possiamo installare il sistema. Ho aggiunto anche alcuni pacchetti che tornano sicuramente utili al primo avvio del sistema:
 
 ```shell
